@@ -1,7 +1,6 @@
 # Diploma Project - Recognising Driver's Activities from the Images Captured by an In-Car Camera
 This project focuses on detecting and classifying specific driver activities using a skeleton-based analysis of in-car camera footage. The solution uses MediaPipe for body keypoint detection and an LSTM-based neural network for sequence classification.
 
-
 ## Project Overview
 The system identifies the following driver activities:
 - Fastening the seatbelt
@@ -16,6 +15,9 @@ The workflow consists of extracting skeletal landmarks, feature engineering (dis
 - **Feature Extraction**: Custom geometric features (normalized distances, angles, triangle areas)
 - **Sequence Modeling**: LSTM, Bi-LSTM, and LSTM with Attention
 - **Classification Output**: Driver activity class per video sequence
+
+## Video
+[Test video (MP4, 600 MB)](https://drive.google.com/drive/folders/1C_uUhElNRUg7wZVOFOoJL82GvoFybkU2?usp=sharing)
 
 ## Installation
 ⚠️ **Note:** This project requires **Python 3.11**.  
