@@ -1,0 +1,5 @@
+Class: unfasten -> TP: 59, FP: 88, FN: 0, TN: 1166
+Class: phone -> TP: 59, FP: 4, FN: 0, TN: 1250
+Class: fasten -> TP: 43, FP: 43, FN: 76, TN: 1151
+Class: no_action -> TP: 826, FP: 76, FN: 161, TN: 250
+Class: gear -> TP: 89, FP: 26, FN: 0, TN: 1198
