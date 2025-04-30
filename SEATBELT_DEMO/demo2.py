@@ -1,7 +1,7 @@
 """
-    Demo 3
-    - model for bidirectional LSTM with convolution layer and attention layer
-    - sequence length = 5
+    Demo 2
+    - model for bidirectional LSTM architecture
+    - sequence length = 6
     - features types = E
 
 """
@@ -13,22 +13,22 @@ import numpy as np
 import mediapipe as mp
 import gdown
 
-from hyperparameters import *
+from SEATBELT_TRAIN_TEST.hyperparameters import *
 from SEATBELT_PREPROCESS.calculate_features import calculate_features
 
 # force using cpu
 NO_CUDA = True
 
 MODEL_ARCHITECTURE = ["basic","bidirectional","convolution","attention"]
-MODEL_ARCHITECTURE_IDX = 3
+MODEL_ARCHITECTURE_IDX = 1
 
-lstm_block_size = 5
+lstm_block_size = 6
 features_type = "E"
 experiment_name = f"size_{lstm_block_size}_features{features_type}"
 
 demo_name = f"Demo - {MODEL_ARCHITECTURE[MODEL_ARCHITECTURE_IDX]} - {experiment_name}"
 
-video_path = '../test_data/test_video.mp4'
+video_path = './test_data/test_video.mp4'
 
 print(f"For this demo there is a required video that will be downloaded from google drive!")
 
@@ -45,19 +45,19 @@ if not os.path.exists(video_path):
 action_scope_window = 60 # 30 fps
 
 if MODEL_ARCHITECTURE[MODEL_ARCHITECTURE_IDX] == "basic":
-    from model_basic import ActionRecognitionLSTM
+    from SEATBELT_TRAIN_TEST.model_basic import ActionRecognitionLSTM
 elif MODEL_ARCHITECTURE[MODEL_ARCHITECTURE_IDX] == "bidirectional":
-    from model_bidirectional import ActionRecognitionLSTM
+    from SEATBELT_TRAIN_TEST.model_bidirectional import ActionRecognitionLSTM
 elif MODEL_ARCHITECTURE[MODEL_ARCHITECTURE_IDX] == "convolution":
-    from model_convolution import ActionRecognitionLSTM
+    from SEATBELT_TRAIN_TEST.model_convolution import ActionRecognitionLSTM
 elif MODEL_ARCHITECTURE[MODEL_ARCHITECTURE_IDX] == "attention":
-    from model_attention import ActionRecognitionLSTM
+    from SEATBELT_TRAIN_TEST.model_attention import ActionRecognitionLSTM
 else:
     raise Exception("Unknown model")
 
 model_architecture = f"model_{MODEL_ARCHITECTURE[MODEL_ARCHITECTURE_IDX]}"
 
-model_path = f"./models/my_{model_architecture}_{experiment_name}"
+model_path = f"../SEATBELT_TRAIN_TEST/models/my_{model_architecture}_{experiment_name}"
 
 
 mp_pose = mp.solutions.pose
